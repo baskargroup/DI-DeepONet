@@ -1,10 +1,10 @@
 # Benchmarking Scientific ML Models for Flow Prediction
 
-This repository provides the source code and training scripts for **"Geometry Matters: Benchmarking Scientific ML Approaches for Flow Prediction around Complex Geometries."** The project evaluates state-of-the-art **neural operators** and **foundation models** for predicting fluid dynamics over complex geometries.
+This repository provides the source code and training scripts for **"Derivative-Informed Neural Operators for Accurate and Generalizable High-Fidelity 3D Fluid Flow around Geometries"** The project evaluates state-of-the-art **neural operators** for predicting 3D fluid dynamics over complex geometries.
 
 
 ## Paper
-Our study introduces a benchmark for scientific machine learning (SciML) models in predicting steady-state flow across intricate geometries using high-fidelity simulation data. The full paper can be accessed here:
+Our study introduces a benchmark for scientific machine learning (SciML) models in predicting 3D steady-state flow across intricate geometries using high-fidelity simulation data. The full paper can be accessed here:
 
 **"Derivative-Informed Neural Operators for Accurate and Generalizable High-Fidelity 3D Fluid Flow around Geometries"** 
 - Authors: *Ali Rabeh, Baskar Ganapathysubramanian*
