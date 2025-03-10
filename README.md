@@ -10,10 +10,12 @@ Our study introduces a benchmark for scientific machine learning (SciML) models 
 - Authors: *Ali Rabeh, Baskar Ganapathysubramanian*
 
 ## Features
+
 - **Benchmarking of DeepONet and Geometric-DeepONet models using 4 different loss functions**.
-- **Evaluation on FlowBench 3D Lid-Driven Cavity dataset**, a publicly available dataset on Hugging Face.
+- **Evaluation on FlowBench 3D Lid-Driven Cavity dataset, a publicly available dataset on Hugging Face**.
 - **Hyperparameter tuning with WandB Sweeps**.
 - **Residual and gradient calculations using FEM-based scripts**.
+- **Support for multiple loss formulations, including MSE, relative MSE, derivative-informed losses, and physics-constrained losses**.
 
 ## Datasets
 This study utilizes the **FlowBench 3D Lid-Driven Cavity (LDC) dataset**, which is publicly accessible on Hugging Face: [**FlowBench LDC Dataset**](https://huggingface.co/datasets/BGLab/FlowBench/tree/main/LDC_NS_3D)
@@ -62,6 +64,22 @@ data:
   file_path_test_x: ./data/test_x.npz
   file_path_test_y: ./data/test_y.npz
 ```
+## Loss Functions
+
+This repository supports multiple loss functions tailored for scientific machine learning models. The `loss_type` is set directly in `main.py` when initializing the model. The available options include:
+
+- **`"mse"`** – Standard Mean Squared Error (MSE) loss.
+- **`"relative_mse"`** – MSE loss normalized per-plane.
+- **`"derivative_mse"`** – MSE loss including first-order derivatives.
+- **`"relative_derivative_mse"`** – Relative MSE loss incorporating derivative information.
+- **`"pure_deriv"`** – Loss function based purely on derivatives.
+- **`"physics_loss"`** – Physics-constrained loss incorporating boundary conditions and solenoidality constraints.
+
+The loss function is defined in `main.py` as:
+```python
+params["loss_type"] = "relative_mse"  # Modify this to select a different loss
+```
+To change the loss function, update the `loss_type` assignment in `main.py` before training.
 
 ## Model Inference
 For model inference, use the scripts in the `plotting_script` folder:
