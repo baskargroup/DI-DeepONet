@@ -29,9 +29,9 @@ class GeoDeepONet(nn.Module):
     def __init__(self, input_channels_func, input_channels_loc, output_channels, modes, branch_net_layers=None, trunk_net_layers=None):
         super().__init__()
 
-        self.input_channels_func = input_channels_func  # Input function values, e.g., [Re, SDF, Mask]
+        self.input_channels_func = input_channels_func  # Input function values, e.g., [Re, SDF]
         self.input_channels_loc = input_channels_loc    # Input location values, e.g., [x, y, z, SDF]
-        self.output_channels = output_channels          # Output values, e.g., [u, v, w, p, cd, cl]
+        self.output_channels = output_channels          # Output values, e.g., [u, v, w]
         self.modes = modes                              # Number of modes in the hidden space
 
         # Define branch and trunk networks for both stages

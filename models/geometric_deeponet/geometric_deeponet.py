@@ -8,9 +8,9 @@ class GeometricDeepONet(BaseLightningModule):
     def __init__(self, input_channels_func, input_channels_loc, output_channels, branch_net_layers, trunk_net_layers, modes, loss=nn.MSELoss(), lr=1e-3, plot_path='./plots/', log_file='DeepONet_log.txt'):
         super(GeometricDeepONet, self).__init__(lr=lr, plot_path=plot_path, log_file=log_file)
         
-        self.input_channels_func = input_channels_func  # Input function channels, e.g., [Re, SDF, mask]
+        self.input_channels_func = input_channels_func  # Input function channels, e.g., [Re, SDF]
         self.input_channels_loc = input_channels_loc    # Input location channels, e.g., [x, y, z]
-        self.output_channels = output_channels          # Output channels, e.g., [u, v, w, p]
+        self.output_channels = output_channels          # Output channels, e.g., [u, v, w]
         self.branch_net_layers = branch_net_layers      # Layers for the branch network
         self.trunk_net_layers = trunk_net_layers        # Layers for the trunk network
         self.modes = modes                              # Number of modes in the hidden space

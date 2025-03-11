@@ -19,9 +19,9 @@ class DeepONet3D(nn.Module):
     def __init__(self, input_channels_func, input_channels_loc, output_channels, modes, branch_net_layers=None, trunk_net_layers=None):
         super().__init__()
         
-        self.input_channels_func = input_channels_func     # [Re, SDF, Mask]
+        self.input_channels_func = input_channels_func     # [Re, SDF]
         self.input_channels_loc = input_channels_loc       # [x, y, z]
-        self.output_channels = output_channels            # [u, v, w, p, cd, cl]
+        self.output_channels = output_channels            # [u, v, w]
         self.modes = modes
         
         self.branch_net_layers = [self.input_channels_func] + branch_net_layers + [self.modes * self.output_channels]

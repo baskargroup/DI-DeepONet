@@ -19,8 +19,8 @@ class LidDrivenDataset3D(Dataset):
             geometric_deeponet (bool): Whether to use geometric DeepONet configuration.
         """
         # Load data from .npz files
-        x = np.load(file_path_x)['data']  # Input data [num_samples, [Re, SDF, Mask], res, res, res]
-        y = np.load(file_path_y)['data']  # Target data [num_samples, [u, v, p, c_d, c_l], res, res, res]
+        x = np.load(file_path_x)['data']  # Input data [num_samples, [Re, SDF], res, res, res]
+        y = np.load(file_path_y)['data']  # Target data [num_samples, [u, v, w], res, res, res]
 
         #if not geometric_deeponet:
         x = x[:, :2, :, :, :]  # Keep [Re, SDF]

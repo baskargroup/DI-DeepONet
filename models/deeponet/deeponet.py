@@ -18,8 +18,8 @@ class DeepONet(BaseLightningModule):
 
 
     def forward(self, x):
-        x1 = x[:,:self.input_channels_func,:,:,:] # x[:,:,:,:3]# function values [Re, SDF, mask]
-        x2 = x[:,self.input_channels_func:,:,:,:] #x[:,:,:,3:] # grid points [x,y]
+        x1 = x[:,:self.input_channels_func,:,:,:] # function values [Re, SDF]
+        x2 = x[:,self.input_channels_func:,:,:,:] # grid points [x,y, z]
         return self.model(x1, x2)
 
  

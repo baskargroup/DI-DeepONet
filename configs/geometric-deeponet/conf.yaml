@@ -1,6 +1,6 @@
 callbacks:
   checkpoint:
-    dirpath: ./checkpoints/u-gradu-rel/easy
+    dirpath: ${CHKPT_DIR}
     filename: geometric-deeponet-{epoch:02d}
     mode: min
     monitor: val_loss_full
@@ -34,7 +34,7 @@ model:
   lr: 0.0001
   modes: 64
   output_channels: 3
-  plot_path: plots/u-gradu-rel/geometric-deeponet/easy
+  plot_path: ${PLOT_DIR}
   trunk_net_layers:
   - 256
   - 256

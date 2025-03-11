@@ -32,16 +32,16 @@ The dataset is licensed under **CC-BY-NC-4.0** and serves as a benchmark for the
 
 ## Essential Dependencies  
 
-This repository requires the following core libraries:  
+This repository requires the following core libraries: 
 
-- **`torch`** – PyTorch framework for deep learning  
-- **`pytorch-lightning`** – High-level PyTorch wrapper for training  
-- **`omegaconf`** – Configuration management  
-- **`wandb`** – Experiment tracking  
-- **`numpy`** – Numerical computations  
-- **`scipy`** – Scientific computing  
+- **`torch`** – PyTorch framework for deep learning 
+- **`pytorch-lightning`** – High-level PyTorch wrapper for training 
+- **`omegaconf`** – Configuration management 
+- **`wandb`** – Experiment tracking 
+- **`numpy`** – Numerical computations 
+- **`scipy`** – Scientific computing 
 
-> **Note:**  
+> **Note:** 
 > We have included `venv_requirements.txt`, which lists all the libraries used in our environment. However, it contains some unnecessary dependencies that are not required for running the core scripts. The essential libraries are listed above for a minimal setup.To set up the environment and install dependencies using `venv_requirements.txt`:
 ```bash
 python3 -m venv sciml
@@ -69,11 +69,11 @@ data:
 This repository supports multiple loss functions tailored for scientific machine learning models. The `loss_type` is set directly in `main.py` when initializing the model. The available options include:
 
 - **`"mse"`** – Standard Mean Squared Error (MSE) loss.
-- **`"relative_mse"`** – MSE loss normalized per-plane.
+- **`"relative_mse"`** – MSE loss normalized per-channel.
 - **`"derivative_mse"`** – MSE loss including first-order derivatives.
 - **`"relative_derivative_mse"`** – Relative MSE loss incorporating derivative information.
-- **`"pure_deriv"`** – Loss function based purely on derivatives.
-- **`"physics_loss"`** – Physics-constrained loss incorporating boundary conditions and solenoidality constraints.
+- **`"pure_deriv"`** – Loss function based purely on derivatives and boundary conditions.
+- **`"physics_loss"`** – Physics-constrained loss incorporating derivatives, boundary conditions, and continuity constraints.
 
 The loss function is defined in `main.py` as:
 ```python

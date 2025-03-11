@@ -66,8 +66,6 @@ def main(model_name, config=None):
 
     # Define required model parameters for each model
     model_params = {
-        'fno': ['n_modes', 'in_channels', 'out_channels', 'hidden_channels', 'projection_channels', 'n_layers', 'lr', 'plot_path', 'log_file'],
-        'cno': ['in_channels', 'out_channels', 'n_layers', 'in_size', 'out_size', 'N_res', 'lr', 'plot_path', 'log_file'],
         'deeponet': ['input_channels_func', 'input_channels_loc', 'output_channels', 'branch_net_layers', 'trunk_net_layers', 'modes', 'lr', 'plot_path', 'log_file'],
         'geometric-deeponet': ['input_channels_func', 'input_channels_loc', 'output_channels', 'branch_net_layers', 'trunk_net_layers', 'modes', 'lr', 'plot_path', 'log_file'],
     }
@@ -83,11 +81,7 @@ def main(model_name, config=None):
     print(f"Model parameters for {model_name} have been successfully set.")
 
     # Initialize the model
-    if model_name == 'fno':
-        model = FNO(**params)
-    elif model_name == 'cno':
-        model = cno(**params)
-    elif model_name == 'deeponet':
+    if model_name == 'deeponet':
         model = DeepONet(**params)
     elif model_name == 'geometric-deeponet':
         model = GeometricDeepONet(**params)                
