@@ -7,7 +7,7 @@ This repository provides the source code and training scripts for **"Derivative-
 Our study introduces a benchmark for scientific machine learning (SciML) models in predicting 3D steady-state flow across intricate geometries using high-fidelity simulation data. The full paper can be accessed here:
 
 **"Derivative-Informed Neural Operators for Accurate and Generalizable High-Fidelity 3D Fluid Flow around Geometries"** 
-- Authors: *Ali Rabeh, Baskar Ganapathysubramanian*
+- Authors: *Ali Rabeh, Adarsh Krishnamurthy, Baskar Ganapathysubramanian*
 
 ## Features
 
