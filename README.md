@@ -42,7 +42,7 @@ This repository requires the following core libraries:
 - **`scipy`** – Scientific computing 
 
 > **Note:** 
-> We have included `venv_requirements.txt`, which lists all the libraries used in our environment. However, it contains some unnecessary dependencies that are not required for running the core scripts. The essential libraries are listed above for a minimal setup.To set up the environment and install dependencies using `venv_requirements.txt`:
+> We have included `venv_requirements.txt`, which lists all the libraries used in our environment. To set up the environment and install dependencies using `venv_requirements.txt`:
 ```bash
 python3 -m venv sciml
 source sciml/bin/activate 
